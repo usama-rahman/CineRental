@@ -3,7 +3,7 @@
 
 import { getImgUrl } from "../utils/cineUtility";
 
-const MoviDetailsModal = ({ selectedMovie, handleModalClose }) => {
+const MoviDetailsModal = ({ selectedMovie, handleModalClose, onCartAdd }) => {
   return (
     <section className="dark:bg-body bg-white font-[Sora] dark:text-white text-dark">
       <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">
@@ -31,6 +31,7 @@ const MoviDetailsModal = ({ selectedMovie, handleModalClose }) => {
                 <a
                   className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
                   href="#"
+                  onClick={(e) => onCartAdd(e, selectedMovie)}
                 >
                   <img src="./assets/tag.svg" alt="" />
                   <span>${selectedMovie.price} | Add to Cart</span>
