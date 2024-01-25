@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-
 import { useContext } from "react";
 import { useState } from "react";
 import { getImgUrl } from "../utils/cineUtility";
@@ -12,7 +11,6 @@ import { toast } from "react-toastify";
 const MovieCard = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
-
   // const { cartData, setCartData } = useContext(MovieContext);
   const { state, dispatch } = useContext(MovieContext);
 
@@ -42,17 +40,20 @@ const MovieCard = ({ movie }) => {
         },
       });
 
-      // toast.success(`Movie ${movie.title} added successfully`, {
+      toast.success(`Added ${movie.title} to Cart!`, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+
+      // toast.success("Success Notification !", {
       //   position: toast.POSITION.BOTTOM_RIGHT,
       // });
-
-      toast.success("Success Notification !", {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
     } else {
-      toast.error(`Movie ${movie.title} has been added to the cart already`, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
+      toast.error(
+        `The Movie ${movie.title} has been added to the cart already`,
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+        }
+      );
     }
   };
 
