@@ -105,3 +105,13 @@ const CartDetails = ({ onCloseCart }) => {
 };
 
 export default CartDetails;
+
+// what is the difference?
+
+// The first one ```
+
+// ```
+
+// The Second One ```
+
+// ```
