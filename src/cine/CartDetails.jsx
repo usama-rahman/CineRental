@@ -5,6 +5,7 @@ import { MovieContext } from "../context";
 import { getImgUrl } from "../utils/cineUtility";
 import DeleteImg from "../assets/delete.svg";
 import CheckoutIcon from "../assets/icons/checkout.svg";
+import { toast } from "react-toastify";
 
 const CartDetails = ({ onCloseCart }) => {
   // const { cartData, setCartData } = useContext(MovieContext);
@@ -16,6 +17,10 @@ const CartDetails = ({ onCloseCart }) => {
     dispatch({
       type: "REMOVE_FROM_CART",
       payload: item,
+    });
+
+    toast.success(`Removed ${item.title} from the cart`, {
+      position: toast.POSITION.BOTTOM_RIGHT,
     });
 
     // const filterItem = state.cartData.filter((item) => {
