@@ -1,7 +1,5 @@
 # Buy your Fav Movie
 
-## React Task Maneger
-
 - Run This Project
 
 ```bash
